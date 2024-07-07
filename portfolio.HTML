@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 7px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 80px 20px 60px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        #about {
+            background-color: #e6f0ff;
+            padding: 60px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        #about img {
+            border-radius: 100%;
+            max-width: 300px;
+            margin: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #about div {
+            flex: 1;
+            margin: 20px;
+        }
+
+        #about h2 {
+            margin-top: 0;
+            font-size: 2.5em;
+        }
+
+        .project {
+            background-color: #e6f0ff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(82, 162, 176, 0.1);
+            transition: transform 0.6s;
+        }
+
+        .project:hover {
+            transform: scale(1.02);
+        }
+
+        .project img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            background-color: #e6f0ff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        form label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            margin-top: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 1em;
+        }
+
+        form button {
+            background-color: #003366;
+            color: white;
+            margin-top: 15px;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #002244;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 7px 0;
+            text-align: center;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Updated styling for Education, Skills, Testimonials, and Blog sections */
+
+        /* Education */
+        #education {
+            background-color: #e6f0ff;
+            padding: 60px;
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+
+        #education h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .education-item {
+            border-left: 4px solid #003366;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .education-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .education-item .education-date {
+            font-style: italic;
+            color: #666;
+        }
+
+        /* Skills */
+        #skills {
+            background-color: #e6f0ff;
+            padding: 60px;
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+
+        #skills h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skills-list li {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Testimonials */
+        #testimonials {
+            background-color: #e6f0ff;
+            padding: 60px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-bottom: 50px;
+        }
+
+        #testimonials h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .testimonial {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(82, 162, 176, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .testimonial blockquote {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .testimonial cite {
+            display: block;
+            text-align: right;
+            color: #777;
+        }
+
+        /* Blog */
+        #blog {
+            background-color: #e6f0ff;
+            padding: 60px;
+            border-radius: 10px;
+        }
+
+        #blog h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .blog-post {
+            margin-bottom: 30px;
+        }
+
+        .blog-post h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .blog-post p {
+            color: #555;
+        }
+
+        .read-more-link {
+            display: inline-block;
+            color: #003366;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .read-more-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>My Professional Portfolio</h1>
+    </header>
+
+    <section id="about">
+        <img src="WhatsApp Image 2024-06-21 at 3.22.36 PM(1)(1).png" alt="Profile Picture">
+        <div>
+            <h2>About Me</h2>
+            <p>Hello! I'm Mahadiya Maheen K F a passionate web developer with a strong background in creating beautiful and functional websites. With a keen eye for design and a deep understanding of coding, I strive to build web experiences that are not only visually appealing but also user-friendly and efficient. My skills range from front-end development using HTML, CSS, and JavaScript to back-end development with various technologies. I'm always eager to learn new things and take on exciting projects that challenge me to grow as a developer.Ultimately, web developers play a pivotal role in shaping the digital presence of businesses and organizations, creating dynamic, accessible, and engaging web experiences that align with client goals and user needs in the competitive digital landscape.
+
+            </p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1</h3>
+            <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Cutting_Edge_Innovative_AI_Project_Ideas.jpg" alt="Project 1 Image">
+            <p>Soft Robotics: Soft robotics focuses on creating robots with flexible and compliant structures that mimic natural organisms. These robots are more adaptable to complex environments and safer to interact with humans.This involves coordinating large numbers of robots to work together towards a common goal. Swarm robotics allows for tasks that are too complex or hazardous for a single robot to accomplish alone, such as search and rescue missions or environmental monitoring.AI enables robots to learn from and adapt to their environment. Machine learning algorithms allow robots to improve their performance over time, making them more efficient and capable of complex tasks.Exoskeletons are wearable robotic devices that augment human strength and endurance. They are used in healthcare for rehabilitation, in industries to reduce physical strain, and in military applications.Improved algorithms and processing power enable robots to navigate autonomously in dynamic and unstructured environments. This capability is crucial for applications in logistics, agriculture, and space exploration.
+
+            </p>
+        </div>
+        <div class="project">
+            <h3>Project 2</h3>
+            <img src="https://www.mygreatlearning.com/blog/wp-content/uploads/2020/04/iStock-1168365129.jpg" alt="Project 2 Image">
+            <p> Facial detection will be integrated into various industries beyond security and surveillance. It will be used in healthcare for patient monitoring, in retail for personalized marketing, and in entertainment for augmented reality experiences. Future systems will be more robust against adversarial attacks and environmental challenges such as varying lighting conditions, occlusions, and pose variations. This robustness is crucial for reliable performance in real-world scenarios.Overall, facial detection technology is poised to revolutionize numerous industries and everyday applications, offering new opportunities while raising important ethical and technical considerations. Continued research and development will drive further innovation and adoption in the coming years.</p>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-item">
+            <h3> BACHELOR OF TECHNOLOGY ARTIFICIAL INTELIGENCE AND MACHINE LEARNING
+            </h3>
+            <p>R.M.K.GROUP OF INSTITUTIONS , CHENNAI , TAMIL NADU</p>
+            <p class="education-date">Graduated: 2027</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li><b>HTML5</b></li>
+            <li><b>CSS3</b></li>
+            <li><b>Node.js</b></li>
+            <li><b>Express.js</b></li>
+            <li><b>MySQL</b></li>
+            <li><b>MongoDB</b></li>
+            <li><b>RESTful APIs</b></li>
+            <li><b>Git / Version Control</b></li>
+            <li><b>Responsive Web Design</b></li>
+            <li><b>UI/UX Design Principles</b></li>
+        </ul>
+    </section>
+
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial">
+            <blockquote>
+                "Working with MAHADIYA MAHEEN was an exceptional experience. Their expertise in web development and dedication to quality resulted in a successful project that exceeded our expectations."
+                <cite>Client A, Company Name</cite>
+            </blockquote>
+        </div>
+        <div class="testimonial">
+            <blockquote>
+                "MAHADIYA MAHEEN is a highly skilled developer with a knack for problem-solving. Their ability to deliver under tight deadlines and willingness to go the extra mile make them a valuable asset to any team."
+                <cite>Colleague B, Developer</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <section id="blog">
+        <h2>Recent Blog Posts</h2>
+        <div class="blog-post">
+            <h3>Implementing Responsive Design Principles</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum tortor nec nisi sodales cursus.</p>
+            <a href="#" class="read-more-link">Read more</a>
+        </div>
+        <div class="blog-post">
+            <h3>Optimizing Front-end Performance with Efficient CSS Techniques</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum tortor nec nisi sodales cursus.</p>
+            <a href="#" class="read-more-link">Read more</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio</p>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let message = document.getElementById('message').value;
+            
+            if (name === "" || email === "" || message === "") {
+                alert('Please fill out all fields.');
+                return;
+            }
+            
+            alert('Thank you for your message, ' + name + '!');
+            // Reset the form
+            document.getElementById('contact-form').reset();
+        });
+    </script>
+</body>
+</html>
